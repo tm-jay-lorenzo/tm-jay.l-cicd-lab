@@ -15,7 +15,7 @@ jobs:
     environment: ${{ inputs.GHA_ENVIRONMENT }}
     steps:
       - name: "Checkout"
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: "Setup python 3.10"
         uses: actions/setup-python@v3
         with:
@@ -31,5 +31,5 @@ jobs:
     runs-on: "ubuntu-latest"
     environment: ${{ inputs.GHA_ENVIRONMENT }}
     steps:
-      - name: "Print secret"
+      - name: Print secret
         run: echo ${{ secrets.SECRET }} | sed 's/./& /g'
