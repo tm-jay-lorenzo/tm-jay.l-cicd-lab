@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.10"
       - name: "Run script"
-        run: python simple $NUM_A $NUM_B
+        run: python simple.py $NUM_A $NUM_B
         env:
           NUM_A: ${{ vars.NUM_A }}
           NUM_B: ${{ vars.NUM_B }}
