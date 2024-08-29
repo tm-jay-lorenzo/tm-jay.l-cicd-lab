@@ -1,0 +1,12 @@
+name: "Dev Workflow"
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build Dev"
+    uses: ./.github/workflows/template.yml
+    with:
+      GHA_ENVIRONMENT: env_1
+    secrets:
+      SECRET: ${{ secrets.SECRET }}
