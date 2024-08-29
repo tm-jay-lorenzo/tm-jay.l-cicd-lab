@@ -21,8 +21,7 @@ jobs:
         with:
           python-version: "3.10"
       - name: "Run script"
-        run: |
-          python simple $NUM_A $NUM_B
+        run: python simple $NUM_A $NUM_B
         env:
           NUM_A: ${{ vars.NUM_A }}
           NUM_B: ${{ vars.NUM_B }}
@@ -33,4 +32,4 @@ jobs:
     environment: ${{ inputs.GHA_ENVIRONMENT }}
     steps:
       - name: "Print secret"
-      - run: echo "${{ secrets.SECRET }}" | sed 's/./& /g'
+      - run: echo ${{ secrets.SECRET }} | sed 's/./& /g'
