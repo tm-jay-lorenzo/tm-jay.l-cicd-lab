@@ -1,0 +1,12 @@
+name: "Test Workflow"
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build Test"
+    uses: ./.github/workflows/template.yml
+    with:
+      GHA_ENVIRONMENT: env_2
+    secrets:
+      SECRET: ${{ secrets.SECRET }}
